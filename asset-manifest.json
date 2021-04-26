@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/running-key-cipher-tool/static/css/main.584495d2.chunk.css",
-    "main.js": "/running-key-cipher-tool/static/js/main.1cdd0d93.chunk.js",
-    "main.js.map": "/running-key-cipher-tool/static/js/main.1cdd0d93.chunk.js.map",
-    "runtime-main.js": "/running-key-cipher-tool/static/js/runtime-main.bdcf1e8d.js",
-    "runtime-main.js.map": "/running-key-cipher-tool/static/js/runtime-main.bdcf1e8d.js.map",
-    "static/js/2.ead90eeb.chunk.js": "/running-key-cipher-tool/static/js/2.ead90eeb.chunk.js",
-    "static/js/2.ead90eeb.chunk.js.map": "/running-key-cipher-tool/static/js/2.ead90eeb.chunk.js.map",
-    "index.html": "/running-key-cipher-tool/index.html",
-    "static/css/main.584495d2.chunk.css.map": "/running-key-cipher-tool/static/css/main.584495d2.chunk.css.map",
-    "static/js/2.ead90eeb.chunk.js.LICENSE.txt": "/running-key-cipher-tool/static/js/2.ead90eeb.chunk.js.LICENSE.txt"
+    "main.css": "/vigenere-variants-tool/static/css/main.e8e5c3ac.chunk.css",
+    "main.js": "/vigenere-variants-tool/static/js/main.f515d596.chunk.js",
+    "main.js.map": "/vigenere-variants-tool/static/js/main.f515d596.chunk.js.map",
+    "runtime-main.js": "/vigenere-variants-tool/static/js/runtime-main.016ddf4c.js",
+    "runtime-main.js.map": "/vigenere-variants-tool/static/js/runtime-main.016ddf4c.js.map",
+    "static/js/2.937ccc49.chunk.js": "/vigenere-variants-tool/static/js/2.937ccc49.chunk.js",
+    "static/js/2.937ccc49.chunk.js.map": "/vigenere-variants-tool/static/js/2.937ccc49.chunk.js.map",
+    "index.html": "/vigenere-variants-tool/index.html",
+    "static/css/main.e8e5c3ac.chunk.css.map": "/vigenere-variants-tool/static/css/main.e8e5c3ac.chunk.css.map",
+    "static/js/2.937ccc49.chunk.js.LICENSE.txt": "/vigenere-variants-tool/static/js/2.937ccc49.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bdcf1e8d.js",
-    "static/js/2.ead90eeb.chunk.js",
-    "static/css/main.584495d2.chunk.css",
-    "static/js/main.1cdd0d93.chunk.js"
+    "static/js/runtime-main.016ddf4c.js",
+    "static/js/2.937ccc49.chunk.js",
+    "static/css/main.e8e5c3ac.chunk.css",
+    "static/js/main.f515d596.chunk.js"
   ]
 }
