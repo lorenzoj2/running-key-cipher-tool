@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/vigenere-variants-tool/static/css/main.e8e5c3ac.chunk.css",
-    "main.js": "/vigenere-variants-tool/static/js/main.fe8604d3.chunk.js",
-    "main.js.map": "/vigenere-variants-tool/static/js/main.fe8604d3.chunk.js.map",
+    "main.js": "/vigenere-variants-tool/static/js/main.156c135b.chunk.js",
+    "main.js.map": "/vigenere-variants-tool/static/js/main.156c135b.chunk.js.map",
     "runtime-main.js": "/vigenere-variants-tool/static/js/runtime-main.016ddf4c.js",
     "runtime-main.js.map": "/vigenere-variants-tool/static/js/runtime-main.016ddf4c.js.map",
-    "static/js/2.8cd9503d.chunk.js": "/vigenere-variants-tool/static/js/2.8cd9503d.chunk.js",
-    "static/js/2.8cd9503d.chunk.js.map": "/vigenere-variants-tool/static/js/2.8cd9503d.chunk.js.map",
+    "static/js/2.1be5a35a.chunk.js": "/vigenere-variants-tool/static/js/2.1be5a35a.chunk.js",
+    "static/js/2.1be5a35a.chunk.js.map": "/vigenere-variants-tool/static/js/2.1be5a35a.chunk.js.map",
     "index.html": "/vigenere-variants-tool/index.html",
     "static/css/main.e8e5c3ac.chunk.css.map": "/vigenere-variants-tool/static/css/main.e8e5c3ac.chunk.css.map",
-    "static/js/2.8cd9503d.chunk.js.LICENSE.txt": "/vigenere-variants-tool/static/js/2.8cd9503d.chunk.js.LICENSE.txt"
+    "static/js/2.1be5a35a.chunk.js.LICENSE.txt": "/vigenere-variants-tool/static/js/2.1be5a35a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.016ddf4c.js",
-    "static/js/2.8cd9503d.chunk.js",
+    "static/js/2.1be5a35a.chunk.js",
     "static/css/main.e8e5c3ac.chunk.css",
-    "static/js/main.fe8604d3.chunk.js"
+    "static/js/main.156c135b.chunk.js"
   ]
 }
