@@ -1,6 +1,7 @@
 import React from 'react';
-import App from './App'
-import Solver from './Solver'
+import App from './App';
+import Solver from './Solver';
+import Error from './Error'
 
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography} from '@material-ui/core';
@@ -43,8 +44,9 @@ function Navbar() {
         </AppBar>
 
         <Switch>
+          <Route exact path="/" component={App}/>
           <Route path="/solver" component={Solver}/>
-          <Route path="/" component={App}/>
+          <Route path="*" component={Error}/>
         </Switch>
       </Router>
     )
