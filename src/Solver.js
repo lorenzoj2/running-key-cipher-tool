@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Slider} from '@material-ui/core';
+import {TextField, Slider} from '@material-ui/core';
+
+import Probability from './Probability'
 
 const useStyles = makeStyles((theme) => ({
   body: {
+    width: "100%",
+    height: "600px",
     margin: 0,
-    marginBottom: theme.spacing(8),
   },
 
   keywordSlider: {
     textAlign: 'center',
-    margin: '20px 20px 0px 20px',
+    margin: theme.spacing(3),
   },
 
   slider: {
@@ -23,12 +26,16 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     fontFamily: 'Courier New',
     fontWeight: 'bold',
+    fontSize: '1em',
+    
+    "& .MuiInputBase-root.Mui-disabled": {
+      color: "black"
+    }
   },
 
   textField: {
-    margin: '20px 20px 0px 20px',
-  }
-
+    margin: theme.spacing(3),
+  },
 }));
 
 function Solver() {
@@ -74,7 +81,7 @@ function Solver() {
     setSlider(newValue)
   }
 
-  function keywordChange(e, newValue) {
+  function keywordChange(e) {
     var adjustPlain = ""
     var keyword = e.target.value
 
@@ -95,21 +102,26 @@ function Solver() {
     setPlaintext(adjustPlain)
   }
 
+  function cipherChange(e) {
+    setCipherInput(e.target.value.toUpperCase().replace(/\s/g, ''))
+  }
+
   return (
     <div className={classes.body}>
       <div className={classes.keywordSlider}>
         <Slider className={classes.slider} step={1} max={cipherInput.length - keywordInput.trim().length} value={slider} onChange={sliderChange}/>
-        <TextField inputProps={{spellCheck: "false"}} InputProps={inputProps} placeholder="Keyword" value={keywordInput} variant="outlined" rows={2} className={classes.input} onChange={keywordChange}/>
+        <TextField label="Keyword" inputProps={{spellCheck: "false"}} InputProps={inputProps} value={keywordInput} variant="outlined" className={classes.input} onChange={keywordChange}/>
       </div>
 
       <div className={classes.textField}>
-        <TextField inputProps={{maxLength: 140, spellCheck: "false"}} InputProps={inputProps} placeholder="Ciphertext" value={cipherInput} variant="outlined" rows={2} className={classes.input} onChange={(e) => setCipherInput(e.target.value.toUpperCase().replace(/\s/g, ''))}/>
+        <TextField label="Ciphertext" inputProps={{maxLength: 140, spellCheck: "false"}} InputProps={inputProps} value={cipherInput} variant="outlined" className={classes.input} onChange={cipherChange}/>
       </div>
 
       <div className={classes.textField}>
-        <TextField inputProps={{spellCheck: "false"}} InputProps={inputProps} placeholder="Plaintext" value={plaintext} variant="outlined" rows={2} className={classes.input}/>
+        <TextField disabled label="Plaintext" inputProps={{spellCheck: "false"}} InputLabelProps={{shrink: true,}} InputProps={inputProps} value={plaintext} variant="outlined" className={classes.input}/>
       </div>
 
+      <Probability cipher={cipherInput}/>
     </div>
   );
 }

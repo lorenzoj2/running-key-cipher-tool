@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   textField: {
-    margin: '20px 20px 0px 20px',
+    margin: theme.spacing(3),
   },
 
   buttons: {
@@ -121,7 +121,7 @@ function App() {
 
       <div className={classes.textField}>
             <Typography variant="h6">Plaintext :</Typography>
-            <TextareaAutosize InputProps={inputProps} value={plainInput} variant="outlined" rows={5} className={classes.input} onChange={(e) => setPlainInput(e.target.value)}/>
+            <TextareaAutosize label="Plaintext" InputProps={inputProps} value={plainInput} variant="outlined" rows={5} className={classes.input} onChange={(e) => setPlainInput(e.target.value)}/>
       </div>
 
       <div className={classes.buttons}>
