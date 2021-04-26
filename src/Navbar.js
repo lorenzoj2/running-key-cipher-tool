@@ -46,7 +46,7 @@ function Navbar() {
         <Switch>
           <Route exact path="/vigenere-variants-tool/" component={App}/>
           <Route exact path="/vigenere-variants-tool/solver" component={Solver}/>
-          <Route path="/*" component={Error}/>
+          <Route path="/vigenere-variants-tool/*" component={Error}/>
         </Switch>
       </Router>
     )
