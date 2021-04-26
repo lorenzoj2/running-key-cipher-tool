@@ -35,18 +35,18 @@ function Navbar() {
               Vigenère Variants Tool
             </Typography>
             <Typography className={classes.appBarOption} variant="h6" color="inherit">
-              <Link className={classes.a} to="/">Encipher / Decipher</Link>
+              <Link className={classes.a} to="/vigenere-variants-tool">Encipher / Decipher</Link>
             </Typography>
             <Typography className={classes.appBarOption} variant="h6" color="inherit">
-              <Link className={classes.a} to="/solver">Solver</Link>
+              <Link className={classes.a} to="/vigenere-variants-tool/solver">Solver</Link>
             </Typography>
           </Toolbar>
         </AppBar>
 
         <Switch>
-          <Route exact path="/" component={App}/>
-          <Route path="/solver" component={Solver}/>
-          <Route path="*" component={Error}/>
+          <Route exact path="/vigenere-variants-tool/" component={App}/>
+          <Route exact path="/vigenere-variants-tool/solver" component={Solver}/>
+          <Route path="/*" component={Error}/>
         </Switch>
       </Router>
     )
