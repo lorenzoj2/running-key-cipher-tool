@@ -36,7 +36,7 @@ function Footer() {
               ┃
             </Typography>
             <Typography variant="subtitle1" color="inherit" className={classes.source}>
-              <a className={classes.a} color="inherit" href="https://github.com/lorenzoj2/running-key-cipher-tool">Source</a>
+              <a className={classes.a} color="inherit" href="https://github.com/lorenzoj2/vigenere-variants-tool">Source</a>
             </Typography>
           </Toolbar>
         </AppBar>

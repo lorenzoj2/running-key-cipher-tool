@@ -1,2 +1,2 @@
 ## Overview
-This is a tool used for the cryptanalysis of running key ciphers.
+This is a tool used for the cryptanalysis of variants of the Vigenère cipher.
