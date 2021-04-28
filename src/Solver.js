@@ -128,19 +128,19 @@ function Solver() {
   return (
     <div className={classes.body}>
       <div className={classes.keywordSlider}>
-        <Slider className={classes.slider} step={1} max={cipherInput.length - 1} value={slider} onChange={sliderChange}/>
+        <Slider className={classes.slider} step={1} max={cipherInput ? cipherInput.length - 1 : 0} value={slider} onChange={sliderChange}/>
       </div>
       <div className={classes.textField}>
         <TextField label="Keyword" inputProps={{spellCheck: 'false'}} InputProps={inputProps} value={keywordInput} variant="outlined" className={classes.input} onChange={keywordChange}/>
 
-        <button className={classes.spaceButton} onClick={(e) => setKeywordInput('')}>Clear</button>
+        <button className={classes.spaceButton} onClick={(e) => setKeywordInput('') & setPlaintext('')}>Clear</button>
         <button className={classes.spaceButton} onClick={(e) => setKeywordInput(keywordInput.replace(/\s+/g, ''))}>Remove Spaces</button>
       </div>
 
       <div className={classes.textField}>
         <TextField label="Ciphertext" inputProps={{maxLength: 138, spellCheck: 'false'}} InputProps={inputProps} value={cipherInput} variant="outlined" className={classes.input} onChange={cipherChange}/>
 
-        <button className={classes.spaceButton} onClick={(e) => setCipherInput('')}>Clear</button>
+        <button className={classes.spaceButton} onClick={(e) => setCipherInput('') & setPlaintext('')}>Clear</button>
         <button className={classes.spaceButton} onClick={(e) => setCipherInput(cipherInput.replace(/\s+/g, ''))}>Remove Spaces</button>
       </div>
 
