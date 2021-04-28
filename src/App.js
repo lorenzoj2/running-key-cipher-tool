@@ -112,7 +112,9 @@ function App() {
 
   // Set keyword to same length as cipher
   function matchLength(){
-    setKeywordInput(keywordInput.repeat(Math.ceil(cipherInput.length / keywordInput.length)).substring(0, cipherInput.length))
+    if(keywordInput.length > 0){
+      setKeywordInput(keywordInput.repeat(Math.ceil(cipherInput.length / keywordInput.length)).substring(0, cipherInput.length))
+    }
   }
 
   return (
