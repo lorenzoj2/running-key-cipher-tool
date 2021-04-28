@@ -38,13 +38,23 @@ function Probability(cipher) {
 
         for(var i = 0; i < 5; i++){
             for(var j = 0; j < cipherProbability.length; j++){
-                rows += data[cipherProbability.charAt(j)][i][0][0]
+                if(cipherProbability.charCodeAt(j) >= 65 && cipherProbability.charCodeAt(j) <= 90) {
+                    rows += data[cipherProbability.charAt(j)][i][0][0]
+                }
+                else {
+                    rows += " "
+                }
             }
             
             rows += "\n"
 
             for(var k = 0; k < cipherProbability.length; k++){
-                rows += data[cipherProbability.charAt(k)][i][0][1]
+                if(cipherProbability.charCodeAt(k) >= 65 && cipherProbability.charCodeAt(k) <= 90) {
+                    rows += data[cipherProbability.charAt(k)][i][0][1]
+                }
+                else {
+                    rows += " "
+                }
             }
             
             rows += "\n\n"

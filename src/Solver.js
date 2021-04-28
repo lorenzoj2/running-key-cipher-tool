@@ -103,7 +103,7 @@ function Solver() {
   }
 
   function cipherChange(e) {
-    setCipherInput(e.target.value.toUpperCase().replace(/\s/g, ''))
+    setCipherInput(e.target.value.toUpperCase())
   }
 
   return (
@@ -114,7 +114,7 @@ function Solver() {
       </div>
 
       <div className={classes.textField}>
-        <TextField label="Ciphertext" inputProps={{maxLength: 140, spellCheck: "false"}} InputProps={inputProps} value={cipherInput} variant="outlined" className={classes.input} onChange={cipherChange}/>
+        <TextField label="Ciphertext" inputProps={{maxLength: 138, spellCheck: "false"}} InputProps={inputProps} value={cipherInput} variant="outlined" className={classes.input} onChange={cipherChange}/>
       </div>
 
       <div className={classes.textField}>

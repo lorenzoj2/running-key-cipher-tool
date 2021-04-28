@@ -46,7 +46,7 @@ function Navbar() {
         <Switch>
           <Route exact path="/" component={App}/>
           <Route exact path="/solver" component={Solver}/>
-          <Route path="/*" component={Error}/>
+          <Route path="/*" component={Error} status={404}/>
         </Switch>
       </Router>
     )
