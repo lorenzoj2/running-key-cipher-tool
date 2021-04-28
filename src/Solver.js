@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import {TextField, Slider} from '@material-ui/core';
 
-import Probability from './Probability'
+import Probability from './Probability';
 
 const useStyles = makeStyles((theme) => ({
   body: {
-    width: "100%",
-    height: "600px",
+    width: '100%',
+    height: '600px',
     margin: 0,
   },
 
   keywordSlider: {
     textAlign: 'center',
-    margin: theme.spacing(3),
+    marginTop: theme.spacing(1.5),
   },
 
   slider: {
@@ -22,19 +22,26 @@ const useStyles = makeStyles((theme) => ({
   },
 
   input: {
-    marginTop: theme.spacing(0.5),
+    marginTop: theme.spacing(0.3),
     width: '100%',
     fontFamily: 'Courier New',
     fontWeight: 'bold',
     fontSize: '1em',
-    
-    "& .MuiInputBase-root.Mui-disabled": {
-      color: "black"
-    }
+
+    '& .MuiInputBase-root.Mui-disabled': {
+      color: 'black',
+    },
   },
 
   textField: {
-    margin: theme.spacing(3),
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+
+  spaceButton: {
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(1),
   },
 }));
 
@@ -47,78 +54,98 @@ function Solver() {
     },
   };
 
-  const [keywordInput, setKeywordInput] = useState("")
-  const [cipherInput, setCipherInput] = useState("")
-  const [plaintext, setPlaintext] = useState("")
+  const [keywordInput, setKeywordInput] = useState('');
+  const [cipherInput, setCipherInput] = useState('');
+  const [plaintext, setPlaintext] = useState('');
 
-  const [slider, setSlider] = useState(0)
+  const [slider, setSlider] = useState(0);
 
-  function sliderChange(e, newValue){
-    var adjustKeyword = "";
-    var adjustPlain = "";
+  function sliderChange(e, newValue) {
+    let adjustKeyword = '';
+    let adjustPlain = '';
 
     // Add spaces to the beginning of the word based on slider value
-    for(var i = 0; i <= newValue - 1; i++){
-      adjustKeyword = adjustKeyword + " "
+    for (var i = 0; i <= newValue - 1; i++) {
+      adjustKeyword = adjustKeyword + ' ';
     }
 
-    adjustKeyword += keywordInput.trim()
+    adjustKeyword += keywordInput.trim();
 
     // Decipher and update plaintext result
-    for(i = 0; i < adjustKeyword.length; i++){
-      if(adjustKeyword.charAt(i) !== " "){
-        let newChar = (((cipherInput.toLowerCase().charCodeAt(i)-96) - (adjustKeyword.toLowerCase().charCodeAt(i)-96)))
-        newChar >= 0 ? newChar = newChar % 26 : newChar === 0 ? newChar = newChar + 1 : newChar = newChar + 26
-        adjustPlain = adjustPlain + String.fromCharCode(97 + newChar)
-      }
-      else{
-        adjustPlain = adjustPlain + " "
+    for (i = 0; i < adjustKeyword.length; i++) {
+      if (adjustKeyword.charAt(i) !== ' ') {
+        let newChar = (((cipherInput.toLowerCase().charCodeAt(i)-96) - (adjustKeyword.toLowerCase().charCodeAt(i)-96)));
+        newChar >= 0 ? newChar = newChar % 26 : newChar === 0 ? newChar = newChar + 1 : newChar = newChar + 26;
+        adjustPlain = adjustPlain + String.fromCharCode(97 + newChar);
+      } else {
+        adjustPlain = adjustPlain + ' ';
       }
     }
 
-    setPlaintext(adjustPlain)
-    setKeywordInput(adjustKeyword)
-    setSlider(newValue)
+    setPlaintext(adjustPlain);
+    setKeywordInput(adjustKeyword);
+    setSlider(newValue);
   }
 
   function keywordChange(e) {
-    var adjustPlain = ""
-    var keyword = e.target.value
+    let adjustPlain = '';
+    const keyword = e.target.value;
 
-   // Decipher and update plaintext result
-    for(var i = 0; i < keyword.length; i++){
-      console.log(keyword.charAt(i))
-      if(keyword.charAt(i) !== " "){
-        let newChar = (((cipherInput.toLowerCase().charCodeAt(i)-96) - (keyword.toLowerCase().charCodeAt(i)-96)))
-        newChar >= 0 ? newChar = newChar % 26 : newChar === 0 ? newChar = newChar + 1 : newChar = newChar + 26
-        adjustPlain = adjustPlain + String.fromCharCode(97 + newChar)
-      }
-      else{
-        adjustPlain = adjustPlain + " "
+    // Decipher and update plaintext result
+    for (let i = 0; i < keyword.length; i++) {
+      if (keyword.charAt(i) !== ' ') {
+        let newChar = (((cipherInput.toLowerCase().charCodeAt(i)-96) - (keyword.toLowerCase().charCodeAt(i)-96)));
+        newChar >= 0 ? newChar = newChar % 26 : newChar === 0 ? newChar = newChar + 1 : newChar = newChar + 26;
+        adjustPlain = adjustPlain + String.fromCharCode(97 + newChar);
+      } else {
+        adjustPlain = adjustPlain + ' ';
       }
     }
 
-    setKeywordInput(e.target.value)
-    setPlaintext(adjustPlain)
+    setKeywordInput(e.target.value);
+    setPlaintext(adjustPlain);
   }
 
   function cipherChange(e) {
-    setCipherInput(e.target.value.toUpperCase())
+    let adjustPlain = '';
+    const cipher = e.target.value;
+
+    // Decipher and update plaintext result
+    for (let i = 0; i < keywordInput.length; i++) {
+      if (keywordInput.charAt(i) !== ' ') {
+        let newChar = (((cipher.toLowerCase().charCodeAt(i)-96) - (keywordInput.toLowerCase().charCodeAt(i)-96)));
+        newChar >= 0 ? newChar = newChar % 26 : newChar === 0 ? newChar = newChar + 1 : newChar = newChar + 26;
+        adjustPlain = adjustPlain + String.fromCharCode(97 + newChar);
+      } else {
+        adjustPlain = adjustPlain + ' ';
+      }
+    }
+
+    setCipherInput(e.target.value.toUpperCase());
+    setPlaintext(adjustPlain);
   }
 
   return (
     <div className={classes.body}>
       <div className={classes.keywordSlider}>
-        <Slider className={classes.slider} step={1} max={cipherInput.length - keywordInput.trim().length} value={slider} onChange={sliderChange}/>
-        <TextField label="Keyword" inputProps={{spellCheck: "false"}} InputProps={inputProps} value={keywordInput} variant="outlined" className={classes.input} onChange={keywordChange}/>
+        <Slider className={classes.slider} step={1} max={cipherInput.length - 1} value={slider} onChange={sliderChange}/>
+      </div>
+      <div className={classes.textField}>
+        <TextField label="Keyword" inputProps={{spellCheck: 'false'}} InputProps={inputProps} value={keywordInput} variant="outlined" className={classes.input} onChange={keywordChange}/>
+
+        <button className={classes.spaceButton} onClick={(e) => setKeywordInput('')}>Clear</button>
+        <button className={classes.spaceButton} onClick={(e) => setKeywordInput(keywordInput.replace(/\s+/g, ''))}>Remove Spaces</button>
       </div>
 
       <div className={classes.textField}>
-        <TextField label="Ciphertext" inputProps={{maxLength: 138, spellCheck: "false"}} InputProps={inputProps} value={cipherInput} variant="outlined" className={classes.input} onChange={cipherChange}/>
+        <TextField label="Ciphertext" inputProps={{maxLength: 138, spellCheck: 'false'}} InputProps={inputProps} value={cipherInput} variant="outlined" className={classes.input} onChange={cipherChange}/>
+
+        <button className={classes.spaceButton} onClick={(e) => setCipherInput('')}>Clear</button>
+        <button className={classes.spaceButton} onClick={(e) => setCipherInput(cipherInput.replace(/\s+/g, ''))}>Remove Spaces</button>
       </div>
 
       <div className={classes.textField}>
-        <TextField disabled label="Plaintext" inputProps={{spellCheck: "false"}} InputLabelProps={{shrink: true,}} InputProps={inputProps} value={plaintext} variant="outlined" className={classes.input}/>
+        <TextField disabled label="Plaintext" inputProps={{spellCheck: 'false'}} InputLabelProps={{shrink: true}} InputProps={inputProps} value={plaintext} variant="outlined" className={classes.input}/>
       </div>
 
       <Probability cipher={cipherInput}/>
