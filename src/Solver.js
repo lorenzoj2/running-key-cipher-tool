@@ -128,7 +128,7 @@ function Solver() {
   return (
     <div className={classes.body}>
       <div className={classes.keywordSlider}>
-        <Slider className={classes.slider} step={1} max={cipherInput ? cipherInput.length - 1 : 0} value={slider} onChange={sliderChange}/>
+        <Slider className={classes.slider} step={1} max={cipherInput && keywordInput ? cipherInput.length - 1 : 0} value={slider} onChange={sliderChange}/>
       </div>
       <div className={classes.textField}>
         <TextField label="Keyword" inputProps={{spellCheck: 'false'}} InputProps={inputProps} value={keywordInput} variant="outlined" className={classes.input} onChange={keywordChange}/>
