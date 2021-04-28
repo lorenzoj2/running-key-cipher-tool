@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vigenere-variants-tool/static/css/main.e8e5c3ac.chunk.css",
-    "main.js": "/vigenere-variants-tool/static/js/main.a231f59f.chunk.js",
-    "main.js.map": "/vigenere-variants-tool/static/js/main.a231f59f.chunk.js.map",
+    "main.js": "/vigenere-variants-tool/static/js/main.08fa1df7.chunk.js",
+    "main.js.map": "/vigenere-variants-tool/static/js/main.08fa1df7.chunk.js.map",
     "runtime-main.js": "/vigenere-variants-tool/static/js/runtime-main.016ddf4c.js",
     "runtime-main.js.map": "/vigenere-variants-tool/static/js/runtime-main.016ddf4c.js.map",
     "static/js/2.840fe953.chunk.js": "/vigenere-variants-tool/static/js/2.840fe953.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.016ddf4c.js",
     "static/js/2.840fe953.chunk.js",
     "static/css/main.e8e5c3ac.chunk.css",
-    "static/js/main.a231f59f.chunk.js"
+    "static/js/main.08fa1df7.chunk.js"
   ]
 }
