@@ -66,7 +66,7 @@ function Probability(cipher) {
       <TextField
         InputLabelProps={{shrink: true}}
         InputProps={inputProps}
-        label="Probability"
+        label="Likely Pairs"
         disabled
         value={cipher.cipher ? getProbability(cipher.cipher).trim() : ''}
         variant="outlined"
